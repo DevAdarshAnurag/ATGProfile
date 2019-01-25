@@ -37,238 +37,261 @@
         android:background="@color/separator1"
         android:orientation="vertical" />
 
-    <!-- user info section-->
     <RelativeLayout
-        android:id="@+id/gradient_rl"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:background="@drawable/profile_gradient4"
-        android:padding="16dp">
+        android:layout_height="match_parent"
+        android:id="@+id/gradient_rl"
+        android:background="@drawable/profile_gradient4">
+        <!-- user info section-->
+        <RelativeLayout
 
-        <!--profile name-->
-        <TextView
-            android:id="@+id/profile_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:fontFamily="@font/alice"
-            android:text="@string/profile_name"
-            android:textColor="@color/white"
-            android:textSize="36sp" />
+            android:layout_alignParentBottom="true"
 
-        <!--profile location-->
-        <ImageView
-            android:id="@+id/image_location"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:layout_below="@id/profile_name"
-            android:src="@drawable/ic_location" />
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp">
 
-        <TextView
-            android:id="@+id/text_location"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/profile_name"
-            android:layout_toEndOf="@id/image_location"
-            android:paddingEnd="4dp"
-            android:paddingStart="2dp"
-            android:text="@string/location"
-            android:textColor="@color/white" />
-
-        <!--profile age-->
-        <ImageView
-            android:id="@+id/image_age"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:layout_below="@id/profile_name"
-            android:layout_toEndOf="@id/text_location"
-            android:src="@drawable/ic_age" />
-
-        <TextView
-            android:id="@+id/text_age"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/profile_name"
-            android:layout_toEndOf="@id/image_age"
-            android:paddingEnd="4dp"
-            android:paddingStart="2dp"
-            android:text="@string/age"
-            android:textColor="@color/white" />
-
-        <!--profile online-->
-        <ImageView
-            android:id="@+id/image_online"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:layout_below="@id/profile_name"
-            android:layout_toEndOf="@id/text_age"
-            android:src="@drawable/ic_online" />
-
-        <TextView
-            android:id="@+id/text_online"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/profile_name"
-            android:layout_toEndOf="@id/image_online"
-            android:paddingEnd="4dp"
-            android:paddingStart="2dp"
-            android:text="@string/online"
-            android:textColor="@color/white" />
-
-        <!--profile status-->
-        <TextView
-            android:id="@+id/profile_status"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/profile_name"
-            android:layout_alignParentStart="true"
-            android:layout_marginTop="36dp"
-            android:layout_marginBottom="16dp"
-            android:text="@string/profile_status"
-            android:textColor="@color/white"
-            android:textSize="24sp" />
-
-        <LinearLayout
-            android:id="@+id/separator2"
-            android:layout_width="match_parent"
-            android:layout_height="1px"
-            android:layout_below="@id/profile_status"
-            android:layout_marginBottom="8dp"
-            android:background="@color/separator1"
-            android:orientation="vertical" />
-
-        <TextView
-            android:id="@+id/profile_interests"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/separator2"
-            android:text="@string/interests"
-            android:textStyle="bold"
-            android:textColor="@color/white"
-            android:textSize="14sp"
-            android:layout_marginBottom="8dp"/>
-
-        <!-- interest list-->
-        <LinearLayout
-            android:id="@+id/interest_list"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/profile_interests"
-            android:layout_marginBottom="16dp"
-            android:orientation="horizontal">
-            <!--interests are added dynamically-->
-        </LinearLayout>
-        <!--interest list ends-->
-
-        <!--bottom bar -->
-        <LinearLayout
-            android:id="@+id/bottom_bar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/interest_list"
-            android:baselineAligned="false"
-            android:orientation="horizontal"
-            android:weightSum="4">
-
-            <RelativeLayout
-                android:layout_width="0dp"
+            <!--profile name-->
+            <TextView
+                android:id="@+id/profile_name"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center_horizontal">
+                android:layout_alignParentTop="true"
+                android:fontFamily="@font/alice"
+                android:text="@string/profile_name"
+                android:textColor="@color/white"
+                android:textSize="36sp" />
 
-                <ImageButton
-                    android:id="@+id/profile_icon"
-                    android:layout_width="36dp"
-                    android:layout_height="36dp"
-                    android:background="@color/transparent"
-                    android:contentDescription="@string/profile"
-                    android:scaleType="fitXY"
-                    android:src="@drawable/ic_avatar" />
+            <!--profile location-->
+            <ImageView
+                android:id="@+id/image_location"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_below="@id/profile_name"
+                android:padding="4dp"
+                android:src="@drawable/ic_location" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/profile_icon"
-                    android:text="@string/profile"
-                    android:textAlignment="center"
-                    android:textColor="@color/white"/>
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="0dp"
+            <TextView
+                android:id="@+id/text_location"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center_horizontal">
+                android:layout_below="@id/profile_name"
+                android:layout_toEndOf="@id/image_location"
+                android:paddingStart="2dp"
+                android:paddingEnd="4dp"
+                android:text="@string/location"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
 
-                <ImageButton
-                    android:id="@+id/check_icon"
-                    android:layout_width="36dp"
-                    android:layout_height="36dp"
-                    android:contentDescription="@string/yes"
-                    android:src="@drawable/ic_cross"
-                    android:background="@color/transparent"
-                    android:scaleType="fitXY"/>
+            <!--profile age-->
+            <ImageView
+                android:id="@+id/image_age"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_below="@id/profile_name"
+                android:layout_toEndOf="@id/text_location"
+                android:padding="4dp"
+                android:src="@drawable/ic_age" />
 
-                <TextView
-                    android:layout_width="36dp"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/check_icon"
-                    android:text="@string/yes"
-                    android:textAlignment="center"
-                    android:textColor="@color/white" />
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="0dp"
+            <TextView
+                android:id="@+id/text_age"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center_horizontal">
+                android:layout_below="@id/profile_name"
+                android:layout_toEndOf="@id/image_age"
+                android:paddingStart="2dp"
+                android:paddingEnd="4dp"
+                android:text="@string/age"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
 
-                <ImageButton
-                    android:id="@+id/cross_icon"
-                    android:layout_width="36dp"
-                    android:layout_height="36dp"
-                    android:contentDescription="@string/no"
-                    android:src="@drawable/ic_check_circle"
-                    android:background="@color/transparent"
-                    android:scaleType="fitXY"/>
+            <!--profile online-->
+            <ImageView
+                android:id="@+id/image_online"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_below="@id/profile_name"
+                android:layout_toEndOf="@id/text_age"
+                android:padding="4dp"
+                android:src="@drawable/ic_online" />
 
-                <TextView
-                    android:layout_width="36dp"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/cross_icon"
-                    android:text="@string/no"
-                    android:textAlignment="center"
-                    android:textColor="@color/white" />
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="0dp"
+            <TextView
+                android:id="@+id/text_online"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center_horizontal">
+                android:layout_below="@id/profile_name"
+                android:layout_toEndOf="@id/image_online"
+                android:paddingStart="2dp"
+                android:paddingEnd="4dp"
+                android:text="@string/online"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
 
-                <ImageButton
-                    android:id="@+id/chat_icon"
-                    android:layout_width="36dp"
-                    android:layout_height="36dp"
-                    android:contentDescription="@string/chat"
-                    android:src="@drawable/ic_chat"
-                    android:background="@color/transparent"
-                    android:scaleType="fitXY"/>
+            <!--profile status-->
+            <TextView
+                android:id="@+id/profile_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/profile_name"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="36dp"
+                android:layout_marginBottom="8dp"
+                android:text="@string/profile_status"
+                android:textColor="@color/white"
+                android:textSize="24sp" />
 
-                <TextView
-                    android:layout_width="36dp"
+            <LinearLayout
+                android:id="@+id/separator2"
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_below="@id/profile_status"
+                android:layout_marginBottom="8dp"
+                android:background="@color/separator1"
+                android:orientation="vertical" />
+
+            <TextView
+                android:id="@+id/profile_interests"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/separator2"
+                android:layout_marginBottom="8dp"
+                android:text="@string/interests"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <!-- interest list-->
+            <LinearLayout
+                android:id="@+id/interest_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/profile_interests"
+                android:layout_marginBottom="20dp"
+                android:orientation="horizontal">
+                <!--interests are added dynamically-->
+            </LinearLayout>
+            <!--interest list ends-->
+
+            <!--bottom bar -->
+            <LinearLayout
+                android:id="@+id/bottom_bar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/interest_list"
+                android:baselineAligned="false"
+                android:orientation="horizontal"
+                android:paddingBottom="2dp"
+                android:weightSum="4">
+
+                <RelativeLayout
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/chat_icon"
-                    android:gravity="center_horizontal"
-                    android:text="@string/chat"
-                    android:textAlignment="center"
-                    android:textColor="@color/white" />
-            </RelativeLayout>
-        </LinearLayout>
-        <!--bottom bar ends-->
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal">
+
+                    <ImageButton
+                        android:id="@+id/profile_icon"
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:background="@color/transparent"
+                        android:contentDescription="@string/profile"
+                        android:padding="4dp"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/ic_avatar" />
+
+                    <TextView
+                        android:layout_width="36dp"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/profile_icon"
+                        android:text="@string/profile"
+                        android:textAlignment="center"
+                        android:textColor="@color/white"
+                        android:textSize="12sp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal">
+
+                    <ImageButton
+                        android:id="@+id/check_icon"
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:background="@color/transparent"
+                        android:contentDescription="@string/yes"
+                        android:padding="4dp"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/ic_cross" />
+
+                    <TextView
+                        android:layout_width="36dp"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/check_icon"
+                        android:text="@string/yes"
+                        android:textAlignment="center"
+                        android:textColor="@color/white"
+                        android:textSize="12sp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal">
+
+                    <ImageButton
+                        android:id="@+id/cross_icon"
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:background="@color/transparent"
+                        android:contentDescription="@string/no"
+                        android:padding="4dp"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/ic_check_circle" />
+
+                    <TextView
+                        android:layout_width="36dp"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/cross_icon"
+                        android:layout_gravity="center"
+                        android:text="@string/no"
+                        android:textAlignment="center"
+                        android:textColor="@color/white"
+                        android:textSize="12sp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal">
+
+                    <ImageButton
+                        android:id="@+id/chat_icon"
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:background="@color/transparent"
+                        android:contentDescription="@string/chat"
+                        android:padding="4dp"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/ic_chat" />
+
+                    <TextView
+                        android:layout_width="36dp"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/chat_icon"
+                        android:layout_gravity="center_horizontal"
+                        android:text="@string/chat"
+                        android:textAlignment="center"
+                        android:textColor="@color/white"
+                        android:textSize="12sp" />
+                </RelativeLayout>
+            </LinearLayout>
+            <!--bottom bar ends-->
+        </RelativeLayout>
+        <!-- user info section ends-->
     </RelativeLayout>
-    <!-- user info section ends-->
 </RelativeLayout>
