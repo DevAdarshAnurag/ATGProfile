@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
                 "Wants to make new friends", interestList);
 
         //adding interests dynamically
-        int interestCharLimit = 0, parentCharLimit = 32, listLen = profile.getInterestList().length;
+        int interestCharLimit = 0, parentCharLimit = 30, listLen = profile.getInterestList().length;
         for (String interest : profile.getInterestList()) {
             TextView textView = new TextView(MainActivity.this);
             textView.setBackground(getResources().getDrawable(R.drawable.interests_bg));
@@ -52,15 +52,17 @@ public class MainActivity extends AppCompatActivity {
                     ViewGroup.LayoutParams.WRAP_CONTENT);
             params.setMargins(4, 0, 4, 0);
             textView.setLayoutParams(params);
-            textView.setPadding(2, 2, 2, 2);
-            textView.setText(" " + interest + " ");
+            textView.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+            textView.setPadding(4, 4, 4, 4);
+            String intText = "  " + interest + "  ";
+            textView.setText(intText);
             textView.setTextColor(getResources().getColor(R.color.white));
-            textView.setIncludeFontPadding(true);
             interestCharLimit += interest.length();
             if (interestCharLimit < parentCharLimit)
                 interestLinearLayout.addView(textView);
             else {
-                textView.setText("    +" + listLen + "    ");
+                intText = "    +" + listLen + "    ";
+                textView.setText(intText);
                 interestLinearLayout.addView(textView);
                 break;
             }
