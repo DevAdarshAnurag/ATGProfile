@@ -53,15 +53,15 @@ public class MainActivity extends AppCompatActivity {
             params.setMargins(4, 0, 4, 0);
             textView.setLayoutParams(params);
             textView.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
-            textView.setPadding(4, 4, 4, 4);
-            String intText = "  " + interest + "  ";
+            textView.setPadding(16, 4, 16, 4);
+            String intText = interest;
             textView.setText(intText);
             textView.setTextColor(getResources().getColor(R.color.white));
             interestCharLimit += interest.length();
             if (interestCharLimit < parentCharLimit)
                 interestLinearLayout.addView(textView);
             else {
-                intText = "    +" + listLen + "    ";
+                intText = " +" + listLen+" ";
                 textView.setText(intText);
                 interestLinearLayout.addView(textView);
                 break;
